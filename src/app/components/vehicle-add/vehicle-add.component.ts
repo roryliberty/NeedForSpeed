@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { VehiclesService } from "../vehicles.service";
-import {Vehicle} from "../vehicle";
+import { FormGroup, FormBuilder, Validators, AbstractControl } from "@angular/forms";
+import { VehiclesService } from "../../vehicles.service";
+import { Vehicle } from "../../vehicle";
 
 @Component({
   selector: 'app-vehicle-add',
@@ -10,7 +10,7 @@ import {Vehicle} from "../vehicle";
 })
 export class VehicleAddComponent implements OnInit {
 
-  addForm: FormGroup;
+  public addForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private vehicleService: VehiclesService) { }
 
@@ -22,15 +22,15 @@ export class VehicleAddComponent implements OnInit {
     });
   }
 
-  get getControl() {
+  public get getControl(): {[p: string]: AbstractControl} {
     return this.addForm.controls;
   }
 
-  onSubmit() {
+  public onSubmit(): void {
     console.log(this.addForm.value);
   }
 
-  addVehicle(VehicleYear, VehicleMake, VehicleModel) {
+  public addVehicle(VehicleYear, VehicleMake, VehicleModel): void {
     this.vehicleService.addVehicle(VehicleYear, VehicleMake, VehicleModel);
   }
 

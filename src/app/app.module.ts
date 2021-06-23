@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
-import { VehicleAddComponent } from './vehicle-add/vehicle-add.component';
+import { VehicleAddComponent } from './components/vehicle-add/vehicle-add.component';
 import { VehiclesService } from "./vehicles.service";
-import { VehiclesComponent } from './vehicles/vehicles.component';
+import { VehiclesComponent } from './components/vehicles/vehicles.component';
 
 @NgModule({
   declarations: [
